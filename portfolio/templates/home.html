@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+{% load static %}
+
+<header class="row">
+    <div class="col-md-4">
+        <img  style="height: 400px; width: 400px;" src="{% static 'porf/retrato.jpg' %}" alt="">
+    </div>
+    <div class="col-md-8 my-auto">
+        <h3>Bryan Mosquera</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quisquam nulla et labore dolore sed quo alias similique necessitatibus adipisci! Aspernatur sint facilis asperiores omnis cupiditate nostrum. Quas aspernatur reprehenderit earum nihil, illo sint mollitia dolores, odit corporis consequatur aperiam architecto! Impedit sapiente molestiae explicabo omnis soluta! Blanditiis beatae inventore velit voluptate minus laudantium iste mollitia fuga. Fugiat voluptatibus voluptates rerum officiis, a, maiores odit nulla sapiente tempora necessitatibus molestiae aut, eum debitis. Enim cum eligendi voluptatibus totam suscipit, quidem blanditiis distinctio obcaecati. Voluptates, architecto veniam! Eos quo earum, id, vitae at odio explicabo neque corporis accusantium, similique aperiam nemo accusamus quas dolorem fugiat dolores harum fugit sint nesciunt quae consequatur aut officia est autem. Molestiae facere sunt accusamus quas numquam eos accusantium! Sequi corporis at recusandae laborum quos reprehenderit dolores, ex et quaerat magni consectetur eum quas eligendi. Sed dolor quod, assumenda iusto quo, odio molestiae veniam dicta enim maiores similique consequuntur nihil maxime fugiat vero dolore sapiente dolorum eum nulla iure. Impedit, voluptate nulla? Quaerat ipsam ab corrupti error itaque quis illo, enim adipisci sed quibusdam at dicta nobis a, explicabo repudiandae officiis nulla perferendis incidunt nostrum porro obcaecati cupiditate nesciunt. Libero rerum, esse quis magni obcaecati adipisci!</p>
+    </div>
+</header>
+
+<article>
+    
+</article>
+<H2>Mis proyectos</H2>
+<div class="row mt-3 row-cols-4 text-center">
+    {% for proyecto in proyectos %}
+    <div class="box">
+        <div class="body">
+            <div class="imgContainer">
+                <img src="{{proyecto.imagen.url}}" alt="">
+            </div>
+            <div class="content d-flex flex-column align-items-center justify-content-center">
+                <div>
+                    <h3 class="text-white fs-5">{{proyecto.titulo}}</h3>
+                    <p class="fs-6 text-white">{{proyecto.descripcion}}</p>
+                    <a class="btn btn-secondary" href="{{proyecto.url}}">Ver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
